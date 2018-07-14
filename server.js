@@ -4,9 +4,6 @@ const views = require('koa-views');
 
 const PORT = process.env.PORT || 3000
 
-const app = new Koa()
-app.use(views(__dirname + '/templates'))
-
 const router = new Router()
 router.get('/', async function (ctx) {
 	await ctx.render('index')
@@ -14,6 +11,8 @@ router.get('/', async function (ctx) {
 router.get('/about', async function (ctx) {
 	await ctx.render('about')
 })
-app.use(router.routes(), router.allowedMethods())
 
+const app = new Koa()
+app.use(router.routes(), router.allowedMethods())
+app.use(views(__dirname + '/templates'))
 app.listen(PORT, () => console.log(`Server is listening port ${PORT}`))
