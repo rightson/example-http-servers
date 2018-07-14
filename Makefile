@@ -1,3 +1,5 @@
+all:
+	@cat Makefile
 koa:
 	npx nodemon server.js
 
@@ -16,3 +18,4 @@ flask-deps:
 
 go-deps:
 	go get -v -u github.com/kataras/iris
+
