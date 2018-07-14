@@ -4,7 +4,7 @@ koa:
 	npx nodemon server.js
 
 flask:
-	venv/bin/gunicorn --reload --bind 0:8000 server:wsgi
+	venv/bin/gunicorn --reload --bind 0:8000 server:app
 
 go:
 	go run server.go
