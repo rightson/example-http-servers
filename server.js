@@ -6,10 +6,10 @@ const PORT = process.env.PORT || 3000
 
 const router = new Router()
 router.get('/', async function (ctx) {
-	await ctx.render('index')
+    await ctx.render('index')
 })
 router.get('/about', async function (ctx) {
-	await ctx.render('about')
+    await ctx.render('about')
 })
 
 const app = new Koa()
